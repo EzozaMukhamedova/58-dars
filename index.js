@@ -30,6 +30,54 @@ async function fetchProducts() {
     console.log(err);
   }
 }
+async function fetchProducts() {
+  const pwrapperEL = document.getElementById("product-wrapper");
+
+  try {
+    const result = await fetch("https://dummyjson.com/products");
+    const res = await result.json();
+
+    console.log("Muvaffaqiyatli yakunlandi");
+
+    const products = res.products;
+    console.log(products);
+
+    products.forEach((product) => {
+      pwrapperEL.appendChild(
+        createCard(
+          product.images[0],
+          product.category,
+          product.title,
+          // product.description,
+          product.price,
+          product.stock,
+          product.rating
+        )
+      );
+    });
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+function createCard(image, category, title, description, price, stock, rating) {
+  const card = document.createElement("div");
+  card.classList.add("card");
+
+  card.innerHTML = `
+      <img src="${image}" alt="${title}">
+      <h3>${title}</h3>
+      <p>${description}</p>
+      <p>Category: ${category}</p>
+      <p>Price: $${price.toFixed(2)}</p>
+      <p>Stock: ${stock}</p>
+      <p>Rating: ${rating}</p>
+  `;
+
+  return card;
+}
+
+fetchProducts();
 
 function createCard(img, category, title, description, price, stock, rating) {
   const newElement = document.createElement("div");
@@ -62,3 +110,64 @@ function createCard(img, category, title, description, price, stock, rating) {
 
   return newElement;
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  let carousel = document.querySelector(".carousel");
+  let items = carousel.querySelectorAll(".item");
+  let dotsContainer = document.querySelector(".dots");
+  let autoDelay = 3000;
+  let autoSlideInterval;
+
+  items.forEach((_, index) => {
+    let dot = document.createElement("span");
+    dot.classList.add("dot");
+    if (index === 0) dot.classList.add("active");
+    dot.dataset.index = index;
+    dotsContainer.appendChild(dot);
+  });
+
+  let dots = document.querySelectorAll(".dot");
+
+  function showItem(index) {
+    items.forEach((item, idx) => {
+      item.classList.remove("active");
+      dots[idx].classList.remove("active");
+      if (idx === index) {
+        item.classList.add("active");
+        dots[idx].classList.add("active");
+      }
+    });
+  }
+
+  function nextItem() {
+    let index = [...items].findIndex((item) =>
+      item.classList.contains("active")
+    );
+    showItem((index + 1) % items.length);
+  }
+
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(nextItem, autoDelay);
+  }
+
+  function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
+  }
+
+  document.querySelector(".prev").addEventListener("click", () => {
+    stopAutoSlide();
+    let index = [...items].findIndex((item) =>
+      item.classList.contains("active")
+    );
+    showItem((index - 1 + items.length) % items.length);
+    startAutoSlide();
+  });
+
+  document.querySelector(".next").addEventListener("click", () => {
+    stopAutoSlide();
+    nextItem();
+    startAutoSlide();
+  });
+
+  startAutoSlide();
+});

@@ -12,10 +12,168 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body>
+    <!-- navbar -->
+    <header>
+      <nav class="nav">
+        <div class="background-section">
+          <div class="nav__info-container">
+            <div class="nav__info-wrapp">
+              <div class="nav__info">
+                <div class="loc">
+                  <img src="./assets/images/locetion.svg" alt="" />
+                </div>
+                <ul class="list">
+                  <li class="item">
+                    <a href="#"><span>Toshkent</span></a>
+                  </li>
+                  <li class="item">
+                    <a href="#"><span>Qabul qilish punktlari</span></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="nav__info">
+                <ul class="list">
+                  <li class="item">
+                    <a href="#"><span>Sotuvchiga aylaning</span></a>
+                  </li>
+                  <li class="item">
+                    <a href="#"><span>Qabul qilish punktini oching</span></a>
+                  </li>
+                  <li class="item">
+                    <a href="#"><span>Savol va Javob</span></a>
+                  </li>
+                  <li class="item">
+                    <a href="#"><span>Mening buyurtmalarim</span></a>
+                  </li>
+                  <li class="item">
+                    <a href="#"
+                      ><img
+                        class="flag-img"
+                        src="./assets/images/image 1.png"
+                        alt=""
+                      /><span>O'zbekcha</span></a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="nav__wrapper">
+            <div class="nav__logo">
+              <img src="./assets/images/uzum logo.svg" alt="" />
+            </div>
+            <div class="nav__wrap">
+              <a href="#" class="nav__katalog"> Katalog </a>
+              <div class="nav__search-wrapp">
+                <input
+                  class="nav__search"
+                  type="text"
+                  placeholder="Mahsulotlar va tukumlar izlash"
+                />
+                <a class="nav__btn" href=""
+                  ><i class="fa-solid fa-magnifying-glass"></i
+                ></a>
+              </div>
+            </div>
+
+            <div class="nav__profile">
+              <p class="nav__pro">
+                <i class="fa-regular fa-user"></i><span>Kirish</span>
+              </p>
+              <p class="nav__pro">
+                <i class="fa-regular fa-heart"></i><span>Saralangan</span>
+              </p>
+              <p class="nav__pro">
+                <img src="./assets/images/basket.svg" alt="" /><span
+                  >Savat</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- navbar -->
     <div class="container">
+      <main class="carousel-container">
+        <div class="carousel">
+          <div class="item active">
+            <img src="assets/images/rasm1.jpg" alt="Image 1" />
+          </div>
+          <div class="item">
+            <img src="assets/images/rasm2.jpg" alt="Image 2" />
+          </div>
+          <div class="item">
+            <img src="assets/images/rasm3.jpg" alt="Image 3" />
+          </div>
+          <div class="item">
+            <img src="assets/images/rasm4.jpg" alt="Image 3" />
+          </div>
+          <div class="item">
+            <img src="assets/images/rasm5.jpg" alt="Image 3" />
+          </div>
+          <div class="item">
+            <img src="assets/images/rasm6.jpg" alt="Image 3" />
+          </div>
+          <div class="item">
+            <img src="assets/images/rasm7.jpg" alt="Image 3" />
+          </div>
+          <div class="item">
+            <img src="assets/images/rasm8.jpg" alt="Image 3" />
+          </div>
+          <div class="item">
+            <img src="assets/images/rasm9.jpg" alt="Image 3" />
+          </div>
+          <div class="item">
+            <img src="assets/images/rasm10.jpg" alt="Image 3" />
+          </div>
+        </div>
+        <button class="btn prev">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="btn next">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <div class="dots"></div>
+      </main>
+      <section>
+        <div class="container">
+          <div class="btn-wrapp">
+            <a class="btn1" href=""
+              ><img src="./assets/images/image 5.png" alt="" /><span
+                >Barchasi 49k so'mdan</span
+              ></a
+            >
+            <a class="btn1" href=""
+              ><img src="./assets/images/image 6.png" alt="" /><span
+                >Barchasi 99k so'mdan</span
+              ></a
+            >
+            <a class="btn1" href=""
+              ><img src="./assets/images/image 5.png" alt="" /><span
+                >Elektor voqealari</span
+              ></a
+            >
+            <a class="btn1" href=""
+              ><img src="./assets/images/image 5.png" alt="" /><span
+                >Modali shkaf</span
+              ></a
+            >
+          </div>
+        </div>
+      </section>
+      <div class="word">Mashhurlar</div>
       <div class="wrapper"></div>
+      <div id="product-wrapper"></div>
     </div>
     <script src="./index.js"></script>
   </body>
