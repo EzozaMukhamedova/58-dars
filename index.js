@@ -1,35 +1,35 @@
 const wrapperEL = document.querySelector(".wrapper");
 
-fetchProducts();
-async function fetchProducts() {
-  console.log("Iltimos kuting!");
+// fetchProducts();
+// async function fetchProducts() {
+//   console.log("Iltimos kuting!");
 
-  try {
-    const result = await fetch("http://localhost:5000/products");
-    const res = await result.json();
+//   try {
+//     const result = await fetch("http://localhost:5000/products");
+//     const res = await result.json();
 
-    console.log("Muvaffaqiyatli yakunlandi");
+//     console.log("Muvaffaqiyatli yakunlandi");
 
-    const products = res.data;
-    console.log(products);
+//     const products = res.data;
+//     console.log(products);
 
-    products.forEach((product) => {
-      wrapperEL.appendChild(
-        createCard(
-          product.image,
-          product.category,
-          product.name,
-          product.description,
-          product.price,
-          product.stock,
-          product.rating
-        )
-      );
-    });
-  } catch (err) {
-    console.log(err);
-  }
-}
+//     products.forEach((product) => {
+//       wrapperEL.appendChild(
+//         createCard(
+//           product.image,
+//           product.category,
+//           product.name,
+//           product.description,
+//           product.price,
+//           product.stock,
+//           product.rating
+//         )
+//       );
+//     });
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
 async function fetchProducts() {
   const pwrapperEL = document.getElementById("product-wrapper");
 
